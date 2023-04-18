@@ -1,12 +1,13 @@
-import { Component,Output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-chat-bar',
   templateUrl: './chat-bar.component.html',
-  styleUrls: ['./chat-bar.component.css']
+  styleUrls: ['./chat-bar.component.css'],
 })
 export class ChatBarComponent {
-  
+  @Output() submitMessage = new EventEmitter<string>();
+
   public chatMessage = '';
   public errorMessage = '';
 
@@ -18,9 +19,13 @@ export class ChatBarComponent {
       return;
     }
 
-    console.log(message);
-    alert(message);
+    const timestamp = new Date().toLocaleString('de');
+    const messageToSend = `${timestamp} - ${message}<br>`;
 
+    this.submitMessage.emit(messageToSend);
     this.chatMessage = '';
+    this.errorMessage = '';
   }
 }
+
+

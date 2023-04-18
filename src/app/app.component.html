@@ -13,11 +13,19 @@
         <div class="col"><app-username></app-username></div>
       </div>
     </div>
-    <div class="row">
-      <div class="col"><app-chat-bar></app-chat-bar></div>
-    </div>
+        <div class="row">
+          <div class="col">
+            <app-chat-history [history]="messageHistory"></app-chat-history>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <app-chat-bar (submitMessage)="messageSubmitted($event)"></app-chat-bar>
+          </div>
+        </div>
 
   </main>
   <app-footer></app-footer>
 </div>
+
 
