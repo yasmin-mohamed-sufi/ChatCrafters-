@@ -1,11 +1,11 @@
 .container {
-    margin-top: 370px;
+    margin-top: 80px;
     position: relative;
 }
 
 textarea {
-    background-color: #f8f8f8;
-    border: none;
+    background-color: #F5F5F5;
+    border: 2px solid #00802F;
     border-radius: 40px;
     box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
     color: #333333;
@@ -20,6 +20,22 @@ textarea {
     width: 100%;
 }
 
+textarea:hover {
+    background-color: #F5F5F5;
+    border: 2px solid #00802F;
+}
+
+textarea[disabled] {
+    border: 2px solid #00802F;
+    background-color: #F5F5F5;
+    
+}
+
+textarea:focus {
+    background-color: #F5F5F5;
+    border: 2px solid #00802F;
+}
+
 .chat-wrapper {
     display: flex;
     justify-content: space-between;
@@ -29,7 +45,9 @@ textarea {
 }
 
 button {
-    background-color: #0077FF;
+    margin-top: 45px;
+    margin-left: 15px; 
+    background-color: #00802F;
     border: none;
     border-radius: 200px;
     color: #FFFFFF;
@@ -43,6 +61,11 @@ button {
 }
 
 button:hover {
-    background-color: #005AE6;
+    background-color: #00802F;
 }
 
+button[disabled] {
+    border-color: #00802F;
+    background-color: #00802F;
+    cursor: not-allowed;
+}

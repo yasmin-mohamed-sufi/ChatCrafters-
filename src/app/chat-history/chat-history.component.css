@@ -1,4 +1,32 @@
-div {
-    height: 150px;
-    overflow: auto;
+
+.container {
+    margin-top: 200px;
+    position: relative;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    align-items: center;
 }
+
+.container h2 {
+    margin-top: 50px;
+  }
+  
+  .container .form-control {
+    margin-top: 0px;
+  }
+
+.form-control {
+    height: 300px;
+    margin-right: 0px; 
+    overflow-y: scroll;
+    background-color: #F5F5F5;
+    border: 1px solid #F5F5F5;
+    border-radius: 5px;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
