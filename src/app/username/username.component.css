@@ -1,41 +1,42 @@
-/*
-.username-container {
+.username {
     display: flex;
     align-items: center;
     justify-content: center;
-    float: left;
 }
 
-.username-textarea {
-    height: 40px;
+textarea {
+    font-size: 18px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 20px;
     width: 200px;
-    margin-right: 10px;
-    padding: 5px;
-    border-radius: 40px;
-    border: 1px solid #ccc;
-    font-size: 16px;
+    height: 40px;
 }
 
-.username-button {
-    height: 40px;
-    width: 80px;
-    background-color: #4CAF50;
+button {
+    font-size: 18px;
+    padding: 10px 20px;
+    margin-left: 10px;
+    background-color: green;
+    color: rgb(255, 255, 255);
     border: none;
     border-radius: 5px;
-    color: #fff;
-    font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.2s ease;
 }
 
-.username-button:hover {
-    background-color: #388E3C;
-
+button:hover {
+    background-color: green;
+    color: white;
+    padding: 5px;
+    margin-top: 5px;
 }
-*/
 
 
-/* This is a comment in CSS */
-
-
+.saved-message {
+    background-color: green;
+    color: white;
+    padding: 5px;
+    margin-top: 5px;
+    position: relative;
+}
 

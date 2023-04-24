@@ -1,24 +1,7 @@
 
-<!-- 
-<div class="container">
-
-    <div class="username-container">
-        <h2>Username: </h2>
-        <textarea class="username-textarea" rows="2" type="text" placeholder="type here..." [(ngModel)]="username"
-            (keyup.enter)="login()"></textarea>
-        <button class="btn btn-primary" [disabled]="!username.trim()" (click)="login()">
-            log in
-        </button>
-    </div>
-
+<div class="username">
+    <textarea [(ngModel)]="username" placeholder="Enter your nickname" (keyup.enter)="saveUsername()"></textarea>
+    <button class="username-button" (click)="saveUsername()">Save</button>
+    <div class="saved-message" *ngIf="usernameSaved">Username saved!</div>
 </div>
 
-
-
-
-    <div class="username-container">
-    <h2>Username: </h2>
-    <textarea class="username-textarea" [(ngModel)]="username"></textarea>
-    <button class="username-button" (click)="login()">Login</button>
-</div>
- -->

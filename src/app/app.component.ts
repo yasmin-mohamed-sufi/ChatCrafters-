@@ -8,9 +8,19 @@ import { Component } from '@angular/core';
 export class AppComponent {
   public title = 'ChatAppStep';
   public messageHistory = '';
+  public username: string = '';
+  public messages: { timestamp: string, text: string }[] = [];
 
   public messageSubmitted(message: string): void {
     this.messageHistory += message;
   }
+
+  public sendMessage(message: string): void {   
+    this.messages.push({ timestamp: new Date().toLocaleString('de'), text: message });
+  }
+  
 }
+
+
+
 

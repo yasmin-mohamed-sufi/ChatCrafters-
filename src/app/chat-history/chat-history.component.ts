@@ -6,6 +6,11 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./chat-history.component.css']
 })
 export class ChatHistoryComponent {
-  @Input() history = '';
+  @Input() history = '';  
+  @Input() messageList: { timestamp: string, text: string }[] = [];
+
+ 
+  
 }
+
 

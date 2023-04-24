@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+
+
+import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-username',
@@ -6,12 +8,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./username.component.css']
 })
 export class UsernameComponent {
-  username: string = '';
+  public username: string = '';
+  public usernameSaved: boolean = false;
+  
 
-  login() {
-    console.log('Logged in as', this.username);
-    // Here, you can add your login logic
+  @Output() saveUsernameEvent = new EventEmitter<string>();
+
+  public saveUsername(): void {
+    this.saveUsernameEvent.emit(this.username);
+    this.usernameSaved = true;
   }
-
+   
+  
 }
+
+
+
 
