@@ -7,10 +7,10 @@ import { Component, Output, EventEmitter } from '@angular/core';
   templateUrl: './username.component.html',
   styleUrls: ['./username.component.css']
 })
+
 export class UsernameComponent {
   public username: string = '';
   public usernameSaved: boolean = false;
-  
 
   @Output() saveUsernameEvent = new EventEmitter<string>();
 

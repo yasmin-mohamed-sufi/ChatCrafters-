@@ -21,7 +21,7 @@ export class ChatBarComponent {
     }
 
     const timestamp = new Date().toLocaleString('de');
-    const messageToSend = `${timestamp} - ${this.username}: ${message}<br>`;
+    const messageToSend = `${timestamp} - ${this.username}: ${message}`;
     
 
     this.submitMessage.emit(messageToSend);
