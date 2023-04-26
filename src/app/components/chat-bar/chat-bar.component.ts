@@ -7,6 +7,7 @@ import { Component, EventEmitter, Output, Input } from '@angular/core';
 })
 export class ChatBarComponent {
   @Input() username: string = '';
+  @Input() usernameSaved: boolean = false;
   @Output() submitMessage = new EventEmitter<string>();
 
   public chatMessage = '';

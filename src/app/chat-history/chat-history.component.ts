@@ -8,6 +8,7 @@ import { Component, Input } from '@angular/core';
 export class ChatHistoryComponent {
   @Input() history = '';  
   @Input() messageList: { timestamp: string, text: string }[] = [];
+  
 
  
   

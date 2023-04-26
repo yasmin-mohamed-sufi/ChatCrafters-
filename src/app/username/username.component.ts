@@ -10,17 +10,23 @@ import { Component, Output, EventEmitter } from '@angular/core';
 export class UsernameComponent {
   public username: string = '';
   public usernameSaved: boolean = false;
-  
 
-  @Output() saveUsernameEvent = new EventEmitter<string>();
+  @Output() saveUsernameEvent = new EventEmitter<any>();
 
   public saveUsername(): void {
-    this.saveUsernameEvent.emit(this.username);
-    this.usernameSaved = true;
+    if (this.username.trim() !== '') {
+      if (this.usernameSaved) {
+        this.username = '';
+        this.usernameSaved = false;
+        this.saveUsernameEvent.emit(null); // emit a logout event
+      } else {
+        this.usernameSaved = true;
+        this.saveUsernameEvent.emit(this.username);
+      }
+    }
   }
-   
-  
 }
+
 
 
 
