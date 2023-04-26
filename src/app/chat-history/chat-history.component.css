@@ -80,4 +80,6 @@
   display: inline-block;
 }
 
-
+.message-bubble-text .current-user {
+  font-weight: bold;
+}

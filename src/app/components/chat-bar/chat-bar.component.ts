@@ -28,6 +28,7 @@ export class ChatBarComponent {
     this.submitMessage.emit(messageToSend);
     this.chatMessage = '';
     this.errorMessage = '';
+    
   }
 }
 

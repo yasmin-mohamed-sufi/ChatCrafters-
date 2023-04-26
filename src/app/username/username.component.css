@@ -3,6 +3,9 @@
     align-items: center;
     justify-content: center;
     font-weight: bold;
+    line-height: 10px;
+    display: flex;
+    justify-content: center;
 }
 
 textarea {
@@ -40,22 +43,6 @@ textarea:hover {
     overflow: hidden;
 }
 
-textarea[disabled] {
-    border: 2px solid #00802F;
-    background-color: #F5F5F5;
-    font-size: 16px;
-    font-family: 'Helvetica Neue', sans-serif;
-    padding: 10px;
-    border: 2px solid #00802F;
-    border-radius: 40px;
-    width: 200px;
-    height: 30px;
-    margin-top: 30px;
-    line-height: 10px;
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
-}
 
 textarea:focus {
     background-color: #F5F5F5;
@@ -70,6 +57,7 @@ textarea:focus {
     line-height: 10px;
     overflow: hidden;
 }
+
 button {
     font-size: 18px;
     padding: 10px 20px;
@@ -122,5 +110,9 @@ button:hover {
     padding: 5px;
     margin-top: 30px;
     margin-left: 50px;
+    line-height: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
