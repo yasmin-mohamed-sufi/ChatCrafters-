@@ -20,11 +20,7 @@ export class ChatBarComponent {
       return;
     }
 
-    const timestamp = new Date().toLocaleString('de');
-    const messageToSend = `${timestamp} - ${this.username}: ${message}`;
-    
-
-    this.submitMessage.emit(messageToSend);
+    this.submitMessage.emit(message);
     this.chatMessage = '';
     this.errorMessage = '';
   }
