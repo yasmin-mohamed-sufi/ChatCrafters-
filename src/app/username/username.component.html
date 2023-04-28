@@ -1,11 +1,14 @@
 <!--
 <div class="username">
-    <textarea [(ngModel)]="username" placeholder="Enter your nickname" (keyup.enter)="saveUsername()"></textarea>
-    <button class="username-button" (click)="saveUsername()">Save</button>
-    <div class="saved-message" *ngIf="usernameSaved">Username saved!</div>
+    <textarea [(ngModel)]="username" placeholder="Enter your nickname" (keyup.enter)="saveUsername()" [disabled]="usernameSaved" maxlength="20"></textarea>
+    <button class="username-button" [class.logout]="usernameSaved" (click)="saveUsername()">
+        {{ usernameSaved ? 'Log out' : 'Save' }}
+      </button>    
+    <!--<div class="saved-message" *ngIf="usernameSaved">Username saved!</div>-->
 </div>
 -->
 
+<<<<<<< HEAD
 <div class="username">
     <textarea [(ngModel)]="username" placeholder="Enter your nickname" (keyup.enter)="saveUsername()" [disabled]="usernameSaved" maxlength="20"></textarea>
     <button class="username-button" [class.logout]="usernameSaved" (click)="saveUsername()">
@@ -13,3 +16,6 @@
       </button>    
     <!--<div class="saved-message" *ngIf="usernameSaved">Username saved!</div>-->
 </div>
+=======
+
+>>>>>>> facd0eb93d5c65afe68b1b7f0b35573f2d83f529

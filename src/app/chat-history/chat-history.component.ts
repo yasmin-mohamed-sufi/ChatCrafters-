@@ -7,7 +7,12 @@ import { Component, Input } from '@angular/core';
 })
 export class ChatHistoryComponent {
   @Input() history = '';  
+<<<<<<< HEAD
   @Input() messageList: { timestamp: string, username: string, text: string }[] = [];
+=======
+  @Input() messageList: { timestamp: string, text: string }[] = [];
+  
+>>>>>>> facd0eb93d5c65afe68b1b7f0b35573f2d83f529
 
  public showDate(index: number) {
   if(index == 0 ) {
