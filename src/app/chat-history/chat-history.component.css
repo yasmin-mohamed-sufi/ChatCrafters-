@@ -6,15 +6,18 @@
     margin: 0;
     padding: 0;
     align-items: center;
+    display: flex;
+    flex-direction: column;
+
 }
 
 .container h2 {
     margin-top: 50px;
-  }
+}
   
-  .container .chat-history {
-    margin-top: 0px;
-  }
+.container .chat-history {
+  margin-top: 0px;
+}
 
 .chat-history {
     height: 300px;
@@ -29,12 +32,23 @@
     font-size: 14px;
     line-height: 1.5;
 }
-.message-bubble-text{
-    font-weight: bold;
 
+.message-bubble-text {
+  background-color: #ffffff;
+  border-radius: 20px;
+  border: 2px solid #00802F;
+  padding: 10px;
+  max-width: 80%;
+  margin: 10px;
+  display: inline-block;
+  word-wrap: break-word;
 }
-.message-bubble-timestamp{
-  text-align: center;
 
+.message-bubble-text {
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 10px;
+  max-width: 80%;
+  margin: 10px;
+  display: inline-block;
 }
-
