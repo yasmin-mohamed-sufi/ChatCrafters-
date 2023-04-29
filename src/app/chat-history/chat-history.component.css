@@ -31,6 +31,16 @@
     font-family: Arial, sans-serif;
     font-size: 14px;
     line-height: 1.5;
+    position: relative;
+}
+
+.message-date {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 100%;
 }
 
 .message-bubble-text {
@@ -51,4 +61,8 @@
   max-width: 80%;
   margin: 10px;
   display: inline-block;
+}
+
+div.message-bubble-text strong {
+  font-weight: bold;
 }
