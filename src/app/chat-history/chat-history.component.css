@@ -61,8 +61,11 @@
   max-width: 80%;
   margin: 10px;
   display: inline-block;
+  position: relative;
+  padding-right: 50px;
 }
 
 div.message-bubble-text strong {
   font-weight: bold;
 }
+

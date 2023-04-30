@@ -25,14 +25,3 @@ export class ChatBarComponent {
     this.errorMessage = '';
   }
 }
-
-
-
-
-
-
-
-
-
-
-
