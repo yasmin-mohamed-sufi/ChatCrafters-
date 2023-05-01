@@ -20,7 +20,7 @@ export class ChatBarComponent {
     }
 
     if (!this.username) {
-      this.errorMessage = 'Please save a username first!';
+      this.errorMessage = 'Please save a nickname first!';
       this.chatMessage = '';
       return;
     }
