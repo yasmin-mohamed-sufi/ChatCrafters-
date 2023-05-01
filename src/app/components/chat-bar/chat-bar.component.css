@@ -75,3 +75,12 @@ button img {
     max-height: 90%;
     margin-left: 2px;
   }
+
+
+  .alert {
+  background-color: #00802F;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+}

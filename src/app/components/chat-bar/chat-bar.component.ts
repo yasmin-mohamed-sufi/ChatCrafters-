@@ -16,7 +16,12 @@ export class ChatBarComponent {
     if (!message.trim()) {
       this.errorMessage = 'Please add text!';
       this.chatMessage = '';
+      return;
+    }
 
+    if (!this.username) {
+      this.errorMessage = 'Please save a username first!';
+      this.chatMessage = '';
       return;
     }
 
@@ -25,3 +30,5 @@ export class ChatBarComponent {
     this.errorMessage = '';
   }
 }
+
+
