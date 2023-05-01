@@ -4,6 +4,6 @@
     <button class="username-button" [class.logout]="usernameSaved" (click)="saveUsername()">
         {{ usernameSaved ? 'Log out' : 'Save' }}
     </button>
-    <span *ngIf="errorMessage" style="color: red">{{ errorMessage }}</span>
+    <span *ngIf="errorMessage" class="error-message">{{ errorMessage }}</span>
 </div>
 

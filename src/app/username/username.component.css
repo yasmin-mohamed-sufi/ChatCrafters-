@@ -119,4 +119,10 @@ button:hover {
     justify-content: center;
 }
 
+.error-message {
+    color: green;
+    font-weight: bold;
+    margin-left: 50px;
+    margin-top: 20px
+}
 
