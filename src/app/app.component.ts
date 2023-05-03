@@ -9,16 +9,16 @@ export class AppComponent {
   public title = 'ChatAppStep';
   public messageHistory = '';
   public username: string = '';
-  public messages: { timestamp: string, username: string,  text: string }[] = [];
+  public messages: { timestamp: string, username: string, text: string }[] = [];
 
   public messageSubmitted(message: string): void {
     this.messageHistory += message;
   }
 
-  public sendMessage(message: string): void {   
+  public sendMessage(message: string): void {
     this.messages.push({ timestamp: new Date().toISOString(), username: this.username, text: message });
   }
-  
+
 }
 
 

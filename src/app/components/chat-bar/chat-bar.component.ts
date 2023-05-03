@@ -7,7 +7,6 @@ import { Component, EventEmitter, Output, Input } from '@angular/core';
 })
 export class ChatBarComponent {
   @Input() username: string = '';
-  @Input() usernameSaved: boolean = false;
   @Output() submitMessage = new EventEmitter<string>();
 
   public chatMessage = '';
@@ -17,17 +16,20 @@ export class ChatBarComponent {
     if (!message.trim()) {
       this.errorMessage = 'Please add text!';
       this.chatMessage = '';
+      return;
+    }
 
+    if (!this.username) {
+      this.errorMessage = 'Please save a nickname first!';
+      this.chatMessage = '';
       return;
     }
 
     this.submitMessage.emit(message);
     this.chatMessage = '';
     this.errorMessage = '';
-    
   }
 }
-
 
 
 

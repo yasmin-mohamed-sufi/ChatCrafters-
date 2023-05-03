@@ -8,9 +8,9 @@ describe('ChatHistoryComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ChatHistoryComponent ]
+      declarations: [ChatHistoryComponent]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(ChatHistoryComponent);
     component = fixture.componentInstance;
