@@ -7,7 +7,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 const chatHistory = [];
-const nicknames = [];
+const usernames = [];
 
 // Add headers
 app.use(function (req, res, next) {
@@ -42,15 +42,15 @@ app.get('/history', function (req, res, next) {
 
 app.post('/history', function (req, res, next) {
     const chatMessage = req.body?.message?.toString();
-    const nickname = req.body?.nickname?.toString();
+    const username = req.body?.username?.toString();
 
     if (!chatMessage) {
         res.status(400).send('Message is missing.');
         return;
     }
 
-    if (!nickname) {
-        res.status(400).send('Nickname is missing.');
+    if (!username) {
+        res.status(400).send('Username is missing.');
         return;
     }
 
@@ -58,7 +58,7 @@ app.post('/history', function (req, res, next) {
     const message = {
         id: chatHistory.length + 1,
         message: chatMessage,
-        nickname: nickname,
+        username: username,
         createdAt: date,
     };
 
@@ -67,90 +67,74 @@ app.post('/history', function (req, res, next) {
     res.json(chatHistory);
 });
 
-// nicknames
-app.get('/nicknames', function (req, res, next) {
-    res.send(nicknames);
+// usernames
+app.get('/usernames', function (req, res, next) {
+    res.send(usernames);
 });
 
-app.get('/nicknames/:id', function (req, res, next) {
-    // simple for loop
-    //   for (var i = 0; nicknames.length > 0; i++) {
-    //     var nickname = nicknames[i]
-
-    //     if (nickname && nickname.id === req.params.id) {
-    //       res.send({ username: nickname.username, id: nickname.id })
-    //     }
-    // }
-
-    //   foreach in array
-    //   nicknames.forEach((nickname) => {
-    //     if (nickname && nickname.id === req.params.id) {
-    //       res.send({ username: nickname.username, id: nickname.id })
-    //     }
-    //   })
-
-    // build-in .find function
+app.get('/usernames/:id', function (req, res, next) {
     const id = +req.params.id;
-    const nickname = nicknames.find((e) => e.id === id);
+    const username = usernames.find((e) => e.id === id);
 
-    if (!nickname) {
-        res.status(404).send('Nickname not found.');
+    if (!username) {
+        res.status(404).send('Username not found.');
         return;
     }
 
-    res.send(nickname);
+    res.send(username);
 });
 
-app.post('/nicknames', function (req, res, next) {
-    const userName = req.body?.nickname?.toString();
+app.post('/usernames', function (req, res, next) {
+    const userName = req.body?.username?.toString();
 
     if (!userName) {
-        res.status(400).send('Nickname is missing.');
+        res.status(400).send('Username is missing.');
         return;
     }
 
-    if (!isNicknameUnique(userName)) {
-        res.status(409).send(`Nickname ${userName} already exists.`);
+    if (!isUsernameUnique(userName)) {
+        res.status(409).send(`Username ${userName} already exists.`);
         return;
     }
 
     const date = new Date();
-    const nickname = {
-        id: nicknames.length + 1,
-        nickname: userName,
+    const username = {
+        id: usernames.length + 1,
+        username: userName,
         createdAt: date,
     };
 
-    nicknames.push(nickname);
+    usernames.push(username);
 
-    res.json(nicknames);
+    res.json(usernames);
 });
 
-app.delete('/nicknames/:id', function (req, res, next) {
+app.delete('/usernames/:id', function (req, res, next) {
     const id = +req.params.id;
-    const nickName = nicknames.find((e) => e.id === id);
+    const username = usernames.find((e) => e.id === id);
 
-    if (!nickName) {
-        res.status(404).send('Nickname not found.');
+    if (!username) {
+        res.status(404).send('Username not found.');
         return;
     }
 
-    const index = nicknames.findIndex((e) => e.id === id);
+    const index = usernames.findIndex((e) => e.id === id);
 
     if (index < 0) {
-        res.status(404).send('Nickname id not found.');
+        res.status(404).send('Username id not found.');
         return;
     }
 
-    nicknames.splice(index, 1);
+    usernames.splice(index, 1);
 
-    res.send('Nickname deleted.');
+    res.send('Username deleted.');
 });
 
-function isNicknameUnique(nickName) {
-    return !nicknames?.some((e) => e.userName === nickName);
+function isUsernameUnique(username) {
+    return !usernames?.some((e) => e.username === username);
 }
 
+
 app.listen(app.get('port'), function () {
-    console.log('Node app is running on port', app.get('port'));
+  console.log('Node app is running on port', app.get('port'));
 });
