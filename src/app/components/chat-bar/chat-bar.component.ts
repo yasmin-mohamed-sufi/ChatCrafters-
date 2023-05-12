@@ -12,6 +12,8 @@ export class ChatBarComponent {
   public chatMessage = '';
   public errorMessage = '';
 
+  constructor(private chatService: ChatService) { }
+
   public addMessage(message: string): void {
     if (!message.trim()) {
       this.errorMessage = 'Please add text!';

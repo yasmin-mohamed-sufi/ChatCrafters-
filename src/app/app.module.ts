@@ -10,6 +10,7 @@ import { ChatBarComponent } from './components/chat-bar/chat-bar.component'
 import { FormsModule } from '@angular/forms';
 import { ChatHistoryComponent } from './chat-history/chat-history.component';
 import { UsernameComponent } from './username/username.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
