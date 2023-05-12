@@ -14,13 +14,13 @@ export class ChatBarComponent {
 
   public addMessage(message: string): void {
     if (!message.trim()) {
-      this.errorMessage = 'Please add text!';
+      this.errorMessage = 'Bitte Text eingeben!';
       this.chatMessage = '';
       return;
     }
 
     if (!this.username) {
-      this.errorMessage = 'Please save a nickname first!';
+      this.errorMessage = 'Erstellen Sie bitte zuerst einen Nicknament!';
       this.chatMessage = '';
       return;
     }
